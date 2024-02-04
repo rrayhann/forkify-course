@@ -4,6 +4,7 @@ import searchView from './view/searchView.js';
 import resultsView from './view/resultsView.js';
 import paginationView from './view/paginationView.js';
 import bookmarksView from './view/bookmarksView.js';
+import addRecipeView from './view/addRecipeView.js';
 
 import 'core-js/stable'; //polyfill async await
 import 'regenerator-runtime/runtime'; //polyfill everything else
@@ -25,6 +26,8 @@ const controlRecipes = async function () {
 
     // 0) update results view, mark selected search results
     resultsView.update(model.getSearchResultsPage());
+
+    // 3. updating bookmarks view
     bookmarksView.update(model.state.bookmarks);
 
     // 1. render recipe
@@ -36,6 +39,7 @@ const controlRecipes = async function () {
     // console.log(data, recipe);
   } catch (err) {
     recipeView.renderError();
+    console.err();
   }
 };
 //call search results part 1
@@ -93,11 +97,27 @@ const controlAddBookmark = function () {
   bookmarksView.render(model.state.bookmarks);
 };
 
+const controlBookmarks = function () {
+  bookmarksView.render(model.state.bookmarks);
+};
+
+const controlAddRecipe = function (newRecipe) {
+  // console.log(newRecipe);
+  //upload the new recipe data
+};
+
 const init = function () {
+  bookmarksView.addHandlerRender(controlBookmarks);
   recipeView.addHandlerRender(controlRecipes);
   recipeView.addHandlerUpdateServings(controlServings);
   recipeView.addHandlerAddBookmark(controlAddBookmark);
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
+  addRecipeView.addHandlerUpload(controlAddRecipe);
 };
 init();
+
+const clearBookmarks = function () {
+  localStorage.clear('bookmarks');
+};
+clearBookmarks();

@@ -1,6 +1,6 @@
 //get query and listen to click event
 class SearchView {
-  _parentEl = document.querySelector(`.search__field`);
+  _parentEl = document.querySelector(`.search`);
 
   getQuery() {
     const query = this._parentEl.querySelector(`.search__field`).value;
