@@ -7,13 +7,13 @@ import paginationView from './view/paginationView.js';
 import bookmarksView from './view/bookmarksView.js';
 import addRecipeView from './view/addRecipeView.js';
 
-import 'core-js/stable'; //polyfill async await
-import 'regenerator-runtime/runtime'; //polyfill everything else
-import { async } from 'regenerator-runtime/runtime';
+// import 'core-js/stable'; //polyfill async await
+// import 'regenerator-runtime/runtime'; //polyfill everything else
+// import { async } from 'regenerator-runtime/runtime';
 
-if (module.hot) {
-  module.hot.accept();
-}
+// if (module.hot) {
+//   module.hot.accept();
+// }
 
 // 1. loading recipe
 const controlRecipes = async function () {

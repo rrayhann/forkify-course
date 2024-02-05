@@ -1,23 +1,23 @@
 {
   "name": "forkify",
   "version": "1.0.0",
-  "description": "recipe web app",
+  "description": "Recipe application",
   "default": "index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "targets": {
+    "main": false
+  },
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html --dist-dir ./dist"
   },
-  "author": "rayhan",
+  "author": "Jonas Schedtmann",
   "license": "ISC",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.9.3",
-    "parcel": "^2.9.3",
-    "sass": "^1.68.0"
+    "@parcel/transformer-sass": "^2.2.1",
+    "parcel": "^2.2.1"
   },
   "dependencies": {
-    "core-js": "^3.33.0",
-    "fractional": "^1.0.0",
-    "fracty": "^1.0.11",
-    "regenerator-runtime": "^0.14.0"
+    "fracty": "^1.0.9"
   }
 }
